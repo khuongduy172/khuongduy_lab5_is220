@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<NVBTModel>
+@{
+}
+
+<table>
+    <tr>
+        <td>Mã thiết bị</td>
+        <td>Mã căn hộ</td>
+        <td>Lần thứ</td>
+        <td>Ngày bảo trì</td>
+        <td>Chức năng</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaThietBi</td>
+            <td>@item.MaCanHo</td>
+            <td>@item.LanThu</td>
+            <td>@item.NgayBaoTri</td>
+            <td>
+                <a href="/BaoTri/Delete?manv=@item.MaNhanVien&&matb=@item.MaThietBi&&mach=@item.MaCanHo&&lanthu=@item.LanThu">Delete</a>
+                <a href="/BaoTri/ChiTiet?manv=@item.MaNhanVien&&matb=@item.MaThietBi&&mach=@item.MaCanHo&&lanthu=@item.LanThu">View</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<NhanVienModel>
+@{
+}
+
+<form action="NhanVien/LietKe" method="post">
+    <label for="MaNhanVien">Tên nhân viên</label>
+    <select name="MaNhanVien">
+        @foreach (var item in Model)
+            {
+                <option value=@item.MaNhanVien>
+                    @item.TenNhanVien
+                </option>
+            }
+    </select>
+    <input type="submit" value="Liệt kê"/>
+</form>

@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model NVBTModel
+@{
+}
+
+<form action="/BaoTri/Update?manv=@Model.MaNhanVien&&matb=@Model.MaThietBi&&mach=@Model.MaCanHo&&lanthu1=@Model.LanThu" method="post">
+    <label>Mã thiết bị</label>
+    <input type="text" value=@Model.MaThietBi disabled name="MaThietBi" />
+    <label>Mã căn hộ</label>
+    <input type="text" value=@Model.MaCanHo name="MaCanHo" />
+    <label>Lần sửa</label>
+    <input type="text" value=@Model.LanThu name="LanThu" />
+    <label>Ngày sửa</label>
+    <input type="datetime" value=@Model.NgayBaoTri name="NgayBaoTri" />
+    <input type="submit" value="Update" />
+</form>
